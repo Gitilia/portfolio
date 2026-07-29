@@ -17,8 +17,8 @@ ideas tailored to this stack.
 
 ## Original ideas for *this* hub
 
-1. **Demo lab strip** — only demos you wrote. Today: Compare + Solid concepts.
-   Add more when you ship a small public toy.
+1. **Demo lab strip** — only demos you wrote. Today: Compare, Solid concepts,
+   Northbound GDP (`/demos/gdp/`). Add more when you ship a small public toy.
 2. **Lane map** — auto / caseware / sdet / levkin stay sibling sites; hub only
    deep-links (no copy-paste of those landings).
 3. **Private projects as README cards** — Hermes, Atlas, apply-bot, etc.: short

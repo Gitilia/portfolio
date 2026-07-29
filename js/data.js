@@ -89,14 +89,34 @@ window.PORTFOLIO = {
       stack: ["Tauri", "React", "SQLite"],
     },
     {
-      id: "llm-council",
-      title: "llm_council",
-      tag: "AI",
+      id: "slack-sieve",
+      title: "slack-sieve",
+      tag: "Tooling",
       summary:
-        "Multi-model LLM council — fan answers out to several models and synthesize a combined response.",
+        "Sieve a Slack workspace export before Mattermost import — triage channels, cherry-pick messages, preview attachments.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/llm_council",
-      stack: ["Python", "Ollama", "OpenRouter"],
+      repo: "https://git.levkin.ca/ilia/slack-sieve",
+      stack: ["Python", "Mattermost", "review UI"],
+    },
+    {
+      id: "hearth",
+      title: "Hearth",
+      tag: "Email",
+      summary:
+        "Consent-only email warmup for levkine.ca — hard allow-list, send/reply only with opted-in mailboxes, no cold outreach.",
+      href: null,
+      repo: "https://git.levkin.ca/ilia/Hearth",
+      stack: ["Python", "SMTP/IMAP", "allow-list"],
+    },
+    {
+      id: "mirror-match",
+      title: "MirrorMatch",
+      tag: "App",
+      summary:
+        "Photo guessing game — upload photos, others guess who is in the picture for points. Next.js, Postgres, NextAuth.",
+      href: null,
+      repo: "https://git.levkin.ca/ilia/mirror_match",
+      stack: ["Next.js", "PostgreSQL", "NextAuth"],
     },
     {
       id: "hermes",
@@ -144,17 +164,22 @@ window.PORTFOLIO = {
     },
   ],
 
-  /** Only demos you own / wrote. Third-party apps (IT-Tools, Pairdrop, Kuma) stay off this list. */
+  /** Only demos you own / wrote. Third-party apps you host stay off this list. */
   demos: [
     {
       title: "Compare",
       href: "https://compare.levkin.ca",
-      note: "Family before/after image slider (your FastAPI app)",
+      note: "Before/after image slider",
     },
     {
       title: "Solid concepts",
       href: "https://solid.levkin.ca/",
       note: "Client website concept gallery",
+    },
+    {
+      title: "Northbound GDP",
+      href: "https://iliadobkin.com/demos/gdp/",
+      note: "Canada GDP MoM chart + PDF export",
     },
   ],
 
