@@ -10,25 +10,31 @@
   const projectList = $("#project-list");
   if (projectList) {
     projectList.innerHTML = data.projects
-      .map(
-        (p) => `
+      .map((p) => {
+        const title = p.href
+          ? `<a href="${escapeAttr(p.href)}">${escapeHtml(p.title)}</a>`
+          : escapeHtml(p.title);
+        const links = [];
+        if (p.href) links.push(`<a href="${escapeAttr(p.href)}">Live</a>`);
+        if (p.repo) links.push(`<a href="${escapeAttr(p.repo)}">Source</a>`);
+        if (!p.href && !p.repo) {
+          links.push(`<span class="plate__private">Private — see summary</span>`);
+        }
+        const readme = p.readme
+          ? `<p class="plate__readme">${escapeHtml(p.readme)}</p>`
+          : "";
+        return `
       <li class="plate">
         <span class="plate__tag">${escapeHtml(p.tag)}</span>
-        <h3 class="plate__title"><a href="${escapeAttr(p.href)}">${escapeHtml(p.title)}</a></h3>
+        <h3 class="plate__title">${title}</h3>
         <p class="plate__summary">${escapeHtml(p.summary)}</p>
-        <ul class="plate__stack">${p.stack
+        ${readme}
+        <ul class="plate__stack">${(p.stack || [])
           .map((s) => `<li>${escapeHtml(s)}</li>`)
           .join("")}</ul>
-        <div class="plate__links">
-          <a href="${escapeAttr(p.href)}">Open</a>
-          ${
-            p.repo
-              ? `<a href="${escapeAttr(p.repo)}">Source</a>`
-              : ""
-          }
-        </div>
-      </li>`
-      )
+        <div class="plate__links">${links.join("")}</div>
+      </li>`;
+      })
       .join("");
   }
 
@@ -70,7 +76,7 @@
     const items = [
       { label: "Email", href: `mailto:${data.person.email}` },
       { label: "LinkedIn", href: data.person.linkedin },
-      { label: "Gitea", href: data.person.gitea },
+      { label: "Public repos", href: data.person.gitea },
       { label: "SDET site", href: "https://sdet.levkin.ca" },
     ];
     contactList.innerHTML = items

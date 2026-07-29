@@ -348,9 +348,23 @@ main {
 
 .plate__links {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.9rem;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+.plate__readme {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.plate__private {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
 }
 
 .chips {
