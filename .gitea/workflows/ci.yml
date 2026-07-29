@@ -1,0 +1,41 @@
+---
+# Homelab CI — Node lane + secret scan.
+# POLICY: lint, typecheck, and tests are HARD gates. Never add `|| true` to them.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  node-ci:
+    runs-on: [homelab, self-hosted, linux]
+    container:
+      image: node:20-bookworm
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint (hard gate)
+        run: npm run lint --if-present
+
+      - name: Typecheck (hard gate)
+        run: npm run typecheck --if-present
+
+      - name: Test (hard gate)
+        run: npm test
+
+  secret-scan:
+    runs-on: [homelab, self-hosted, linux, heavy]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks
+        run: |
+          docker run --rm -v "$PWD:/repo" ghcr.io/gitleaks/gitleaks:latest \
+            detect --source /repo --config /repo/.gitleaks.toml --no-banner --redact

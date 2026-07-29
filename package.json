@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "description": "Personal hub at iliadobkin.com — projects, live demos, and consulting lanes.",
+  "scripts": {
+    "lint": "npm-run-all -p lint:js lint:css lint:html",
+    "lint:js": "eslint js/",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:html": "html-validate index.html",
+    "test": "node --test tests/*.test.js",
+    "typecheck": "tsc --noEmit",
+    "check": "npm-run-all -p lint typecheck test",
+    "preview": "python3 -m http.server 8765"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^26.1.2",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "html-validate": "^9.7.1",
+    "npm-run-all2": "^8.0.4",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "typescript": "^5.9.3"
+  },
+  "type": "module"
+}

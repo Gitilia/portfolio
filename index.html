@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ilia Dobkin — portfolio</title>
+    <meta
+      name="description"
+      content="Ilia Dobkin — Senior SDET. Projects, live demos, and consulting lanes."
+    />
+    <meta property="og:title" content="Ilia Dobkin — portfolio" />
+    <meta
+      property="og:description"
+      content="Projects, live demos, and consulting lanes — automation, self-hosted systems, test engineering."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iliadobkin.com/" />
+    <meta property="og:site_name" content="Ilia Dobkin" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ilia Dobkin — portfolio" />
+    <meta
+      name="twitter:description"
+      content="Projects, live demos, and consulting lanes."
+    />
+    <link rel="canonical" href="https://iliadobkin.com/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2312161c'/%3E%3Ctext x='6' y='23' font-family='Georgia,serif' font-size='18' fill='%23e8dcc8'%3EI%3C/text%3E%3C/svg%3E" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ilia Dobkin",
+        "url": "https://iliadobkin.com/",
+        "jobTitle": "Senior SDET",
+        "email": "idobkin@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/ilia-dobkin-8263343/",
+          "https://sdet.levkin.ca/",
+          "https://auto.levkin.ca/",
+          "https://caseware.levkin.ca/",
+          "https://levkin.ca/"
+        ]
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      defer
+      src="https://stats.levkin.ca/script.js"
+      data-website-id="c1338c3a-1fc8-4a30-bf8d-fe3f65172067"
+    ></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="top">
+      <div class="top__inner">
+        <a class="mark" href="#top" aria-label="Ilia Dobkin — home">
+          <span class="mark__name">Ilia Dobkin</span>
+          <span class="mark__meta" aria-hidden="true">portfolio</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#demos">Demos</a>
+          <a href="#lanes">Lanes</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <p class="hero__kicker">Senior SDET · Remote (ET)</p>
+        <h1 id="hero-title" class="hero__title">Ilia Dobkin</h1>
+        <p class="hero__lede" id="hero-lede"></p>
+        <div class="hero__actions">
+          <a class="btn btn--solid" id="btn-projects" href="#work">See projects</a>
+          <a class="btn btn--ghost" id="btn-sdet" href="https://sdet.levkin.ca"
+            >Open SDET portfolio</a
+          >
+        </div>
+        <div class="hero__rule" aria-hidden="true"></div>
+      </section>
+
+      <section class="section" id="work" aria-labelledby="work-title">
+        <header class="section__head">
+          <h2 id="work-title">Selected work</h2>
+          <p>Things that shipped and stay reachable — not toy repos.</p>
+        </header>
+        <ul class="plates" id="project-list"></ul>
+      </section>
+
+      <section class="section section--band" id="demos" aria-labelledby="demos-title">
+        <header class="section__head">
+          <h2 id="demos-title">Live demos</h2>
+          <p>Small public tools on the same edge. Click and poke.</p>
+        </header>
+        <ul class="chips" id="demo-list"></ul>
+      </section>
+
+      <section class="section" id="lanes" aria-labelledby="lanes-title">
+        <header class="section__head">
+          <h2 id="lanes-title">Other sites</h2>
+          <p>Consulting and brand properties — kept separate on purpose.</p>
+        </header>
+        <ul class="lanes" id="lane-list"></ul>
+      </section>
+
+      <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+        <header class="section__head">
+          <h2 id="contact-title">Contact</h2>
+          <p id="contact-blurb"></p>
+        </header>
+        <ul class="contact" id="contact-list"></ul>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p>
+        <span id="year"></span> Ilia Dobkin ·
+        <a href="https://sdet.levkin.ca">sdet.levkin.ca</a> ·
+        <a href="https://levkin.ca">levkin.ca</a>
+      </p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
