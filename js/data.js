@@ -6,16 +6,17 @@ window.PORTFOLIO = {
     location: "Remote (ET) · Canadian citizen",
     email: "idobkin@gmail.com",
     linkedin: "https://www.linkedin.com/in/ilia-dobkin-8263343/",
-    gitea: "https://git.levkin.ca/explore/repos",
+    github: "https://github.com/Gitilia",
     resume: "/resume.pdf",
     blurb:
-      "I build test systems that survive flaky networks, and side projects that stay online. Playwright and CI for work; Proxmox, Caddy, and a private Gitea for everything else.",
+      "I build test systems that survive flaky networks, and side projects that stay online. Playwright and CI for work; Proxmox and Caddy at home; public code on GitHub.",
   },
 
   /**
    * Featured projects. Prefer PUBLIC repos + live demos.
    * Private work (Hermes, Atlas, …): set href/repo to null and put a short
    * README-style description in `summary` / `readme`.
+   * Public source: github.com/Gitilia (Gitea remains the write/CI forge).
    */
   projects: [
     {
@@ -25,7 +26,7 @@ window.PORTFOLIO = {
       summary:
         "Career portfolio styled as a Playwright test runner — filters, trace view, network tab, keyboard shortcuts.",
       href: "https://sdet.levkin.ca",
-      repo: "https://git.levkin.ca/ilia/sdetProfile",
+      repo: "https://github.com/Gitilia/sdetProfile",
       stack: ["Playwright UX", "vanilla JS", "a11y"],
     },
     {
@@ -35,7 +36,9 @@ window.PORTFOLIO = {
       summary:
         "Photo face recognition (DeepFace / ArcFace) with viewer + admin — self-hosted, Authentik SSO.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/punimtag",
+      repo: null,
+      readme:
+        "Private / self-hosted app. Face recognition stack stays on the homelab; not mirrored to public GitHub yet.",
       stack: ["TypeScript", "Python", "Docker"],
     },
     {
@@ -45,7 +48,7 @@ window.PORTFOLIO = {
       summary:
         "Shared Playwright + API test kit — UI helpers, API client, timings, metrics. Used by punimtag and other apps.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/playkit",
+      repo: "https://github.com/Gitilia/playkit",
       stack: ["Playwright", "TypeScript", "npm"],
     },
     {
@@ -55,7 +58,7 @@ window.PORTFOLIO = {
       summary:
         "Browser extension + Playwright/Camoufox package that dumps AI-ready page markdown, console, and network noise.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/context-extractor",
+      repo: "https://github.com/Gitilia/context-extractor",
       stack: ["JS", "Python", "Playwright"],
     },
     {
@@ -65,7 +68,7 @@ window.PORTFOLIO = {
       summary:
         "Local-first swipe-to-triage UI with pluggable adapters — same gestures for a photo folder, inbox, or approval queue.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/SwipeAnything",
+      repo: "https://github.com/Gitilia/SwipeAnything",
       stack: ["TypeScript", "adapters", "a11y"],
     },
     {
@@ -75,7 +78,7 @@ window.PORTFOLIO = {
       summary:
         "Privacy-first overhead video → named PDFs for Paperless. Motion windows, perspective crop, hands-free frame pick.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/PaperPod",
+      repo: "https://github.com/Gitilia/PaperPod",
       stack: ["Python", "OCR", "CV"],
     },
     {
@@ -85,7 +88,7 @@ window.PORTFOLIO = {
       summary:
         "Native menu-bar clipboard manager — Tauri 2, React, SQLite FTS5, pin, multi-select, paste-and-return.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/maCopy",
+      repo: "https://github.com/Gitilia/maCopy",
       stack: ["Tauri", "React", "SQLite"],
     },
     {
@@ -95,7 +98,7 @@ window.PORTFOLIO = {
       summary:
         "Sieve a Slack workspace export before Mattermost import — triage channels, cherry-pick messages, preview attachments.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/slack-sieve",
+      repo: "https://github.com/Gitilia/slack-sieve",
       stack: ["Python", "Mattermost", "review UI"],
     },
     {
@@ -105,7 +108,9 @@ window.PORTFOLIO = {
       summary:
         "Consent-only email warmup for levkine.ca — hard allow-list, send/reply only with opted-in mailboxes, no cold outreach.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/Hearth",
+      repo: null,
+      readme:
+        "Private / self-hosted. Consent-only warmup tooling stays off the public GitHub mirror.",
       stack: ["Python", "SMTP/IMAP", "allow-list"],
     },
     {
@@ -115,7 +120,7 @@ window.PORTFOLIO = {
       summary:
         "Photo guessing game — upload photos, others guess who is in the picture for points. Next.js, Postgres, NextAuth.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/mirror_match",
+      repo: "https://github.com/Gitilia/mirror_match",
       stack: ["Next.js", "PostgreSQL", "NextAuth"],
     },
     {
@@ -159,7 +164,9 @@ window.PORTFOLIO = {
       summary:
         "Toronto event signals for short-term rental demand — scrape, score, alert, optional price bumps.",
       href: null,
-      repo: "https://git.levkin.ca/ilia/AtAnyRate",
+      repo: null,
+      readme:
+        "Private / business ops tooling — not published on public GitHub.",
       stack: ["Python", "Playwright", "Telegram"],
     },
   ],

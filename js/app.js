@@ -76,7 +76,7 @@
     const items = [
       { label: "Email", href: `mailto:${data.person.email}` },
       { label: "LinkedIn", href: data.person.linkedin },
-      { label: "Public repos", href: data.person.gitea },
+      { label: "Public repos", href: data.person.github },
       { label: "SDET site", href: "https://sdet.levkin.ca" },
     ];
     contactList.innerHTML = items

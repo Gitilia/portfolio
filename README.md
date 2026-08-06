@@ -22,3 +22,7 @@ Plain HTML / CSS / JS. Content in `js/data.js`. Ideas backlog in `IDEAS.md`.
 
 Homelab static site LXC (ansible `sites` / `portfolio`). Source checkout stays
 out of the public web root; see the ansible `site-lxc-git` guide.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
