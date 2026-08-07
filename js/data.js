@@ -158,6 +158,16 @@ window.PORTFOLIO = {
       stack: ["HTML", "CSS", "vanilla JS"],
     },
     {
+      id: "stork",
+      title: "Stork",
+      tag: "App",
+      summary:
+        "Shareable baby-name boards — votes, en/ru/he notes, optional voice. Start a board, share the /b/… link.",
+      href: "https://stork.levkin.ca/b/b_gS0LlZHm-lk",
+      repo: "https://github.com/Gitilia/stork",
+      stack: ["Python", "FastAPI", "SQLite", "Docker"],
+    },
+    {
       id: "atanyrate",
       title: "AtAnyRate",
       tag: "Automation",
@@ -173,6 +183,11 @@ window.PORTFOLIO = {
 
   /** Only demos you own / wrote. Third-party apps you host stay off this list. */
   demos: [
+    {
+      title: "Stork",
+      href: "https://stork.levkin.ca/b/b_gS0LlZHm-lk",
+      note: "Baby-name board demo (Mira / Noa / Lior / Elena / Ezra)",
+    },
     {
       title: "Compare",
       href: "https://compare.levkin.ca",
