@@ -162,7 +162,7 @@ window.PORTFOLIO = {
       title: "Stork",
       tag: "App",
       summary:
-        "Shareable baby-name boards — votes, en/ru/he notes, optional voice. Start a board, share the /b/… link.",
+        "Shareable baby-name boards — votes, en/ru/he notes, optional voice. Start a board, share the /b/… link (anyone with it can edit).",
       href: "https://stork.levkin.ca/b/b_gS0LlZHm-lk",
       repo: "https://github.com/Gitilia/stork",
       stack: ["Python", "FastAPI", "SQLite", "Docker"],
@@ -186,7 +186,7 @@ window.PORTFOLIO = {
     {
       title: "Stork",
       href: "https://stork.levkin.ca/b/b_gS0LlZHm-lk",
-      note: "Baby-name board demo (Mira / Noa / Lior / Elena / Ezra)",
+      note: "Read-only baby-name board demo (Mira / Noa / Lior / Elena / Ezra)",
     },
     {
       title: "Compare",
