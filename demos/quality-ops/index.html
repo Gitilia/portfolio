@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quality Ops · Ilia Dobkin · RocketRez</title>
+    <meta
+      name="description"
+      content="How I lead on quality: where I push in the process, and what actually changes how a team ships."
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <a class="skip" href="#audio-dock">Skip to audio</a>
+    <div class="auto-cursor" id="auto-cursor" aria-hidden="true"></div>
+
+    <header class="top">
+      <div class="top__brand">
+        <span class="top__mark" aria-hidden="true"></span>
+        <span class="top__name">Quality Ops</span>
+      </div>
+      <p class="top__meta">Ilia Dobkin · Senior QA · RocketRez</p>
+      <div class="top__controls" role="group" aria-label="Automation controls">
+        <button type="button" class="btn btn--accent btn--sm" id="btn-auto">
+          Automate
+        </button>
+        <button type="button" class="btn btn--ghost btn--sm" id="btn-pause" disabled>
+          Pause
+        </button>
+        <button type="button" class="btn btn--ghost btn--sm" id="btn-stop" disabled>
+          Stop
+        </button>
+      </div>
+      <div class="timer" aria-live="polite">
+        <span class="timer__label">length</span>
+        <span class="timer__value" id="timer">~2:30</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="hero__eyebrow">Follow-up · interactive answer</p>
+        <h1 id="hero-title">Quality is how the queue moves.</h1>
+        <p class="hero__lede">
+          Guests don’t wait for a “QA phase.” Neither should software.
+          Hit play, or use <strong>Automate</strong> in the top bar.
+        </p>
+
+        <section class="audio-dock" id="audio-dock" aria-labelledby="audio-title">
+          <div class="audio-dock__head">
+            <div>
+              <h2 id="audio-title">Listen · under 3 minutes</h2>
+              <p id="audio-status">Loading…</p>
+            </div>
+            <div class="audio-dock__actions">
+              <button type="button" class="btn btn--solid" id="btn-play" disabled>
+                Play
+              </button>
+              <button type="button" class="btn btn--ghost" id="btn-transcript" aria-expanded="false">
+                Script
+              </button>
+            </div>
+          </div>
+
+          <div class="runner" id="runner" hidden>
+            <div class="runner__bar">
+              <span class="runner__dot" aria-hidden="true"></span>
+              <code class="runner__file">quality-ops.spec.ts</code>
+              <span class="runner__state" id="runner-state">idle</span>
+            </div>
+            <ol class="runner__log" id="runner-log" aria-live="polite"></ol>
+          </div>
+
+          <div class="audio-slot" data-state="loading" id="audio-slot">
+            <audio id="answer-audio" preload="metadata" controls></audio>
+            <div class="audio-empty" id="audio-empty" hidden>
+              <p class="audio-empty__title">No recording yet</p>
+              <p>
+                Drop <code>audio/answer.mp3</code> and set it in
+                <code>js/audio-config.js</code>. Until then, use
+                <strong>Automate</strong> from the top bar.
+              </p>
+            </div>
+          </div>
+
+          <div class="chapters" id="chapters" role="list" aria-label="Chapters"></div>
+
+          <div class="transcript" id="transcript" hidden>
+            <h3>Script</h3>
+            <pre class="transcript__pre" id="transcript-body"></pre>
+          </div>
+        </section>
+
+        <div class="proof" aria-label="Results">
+          <div class="proof__item">
+            <strong>550+</strong>
+            <span>Playwright + API checks in CI</span>
+          </div>
+          <div class="proof__item">
+            <strong>90%+</strong>
+            <span>daily pass rate we held</span>
+          </div>
+          <div class="proof__item">
+            <strong>~50%</strong>
+            <span>less hand regression</span>
+          </div>
+        </div>
+
+        <div class="queue-wrap">
+          <div class="queue-wrap__head">
+            <h2 class="queue-wrap__title">Story queue</h2>
+            <p id="queue-caption">
+              Fragile signal → work piles up late. Flip levers (or run automation) and watch tickets clear the gate.
+            </p>
+          </div>
+          <div class="queue" id="queue" aria-hidden="true">
+            <div class="queue__rail"></div>
+            <div class="queue__label queue__label--in">Jam risk</div>
+            <div class="queue__label queue__label--out">Clears</div>
+            <div class="queue__tickets" id="tickets"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="console" id="console" aria-labelledby="console-title">
+        <div class="console__head">
+          <h2 id="console-title">Console</h2>
+          <p>
+            Three places I push. Click around, or Automate from the top bar.
+            <span class="kbd-hint"><kbd>A</kbd> automate · <kbd>P</kbd> pause · <kbd>Esc</kbd> stop · <kbd>Space</kbd> play</span>
+          </p>
+        </div>
+
+        <div class="board">
+          <aside class="panel panel--example" aria-labelledby="example-title">
+            <h3 id="example-title">1 · Lead by doing</h3>
+            <p class="panel__hint">I don’t ask for quality theatre I won’t do myself.</p>
+            <div class="moves" role="list">
+              <button class="move is-active" type="button" data-move="signal" aria-pressed="true">
+                <span class="move__kicker">A</span>
+                <span class="move__title">Own the signal</span>
+              </button>
+              <button class="move" type="button" data-move="left" aria-pressed="false">
+                <span class="move__kicker">B</span>
+                <span class="move__title">Show up earlier</span>
+              </button>
+              <button class="move" type="button" data-move="path" aria-pressed="false">
+                <span class="move__kicker">C</span>
+                <span class="move__title">Make good work easy</span>
+              </button>
+            </div>
+            <article class="detail" id="move-detail" aria-live="polite"></article>
+          </aside>
+
+          <section class="panel panel--process" aria-labelledby="process-title">
+            <h3 id="process-title">2 · Where I push</h3>
+            <p class="panel__hint">Most of the win is early. Tap a stage.</p>
+            <ol class="stages" id="stages"></ol>
+            <article class="detail detail--stage" id="stage-detail" aria-live="polite"></article>
+          </section>
+
+          <section class="panel panel--levers" aria-labelledby="levers-title">
+            <h3 id="levers-title">3 · What changes behaviour</h3>
+            <p class="panel__hint">
+              Not coverage theatre. Team trust in the quality system.
+            </p>
+            <div class="meter" aria-label="Trust meter">
+              <div class="meter__track">
+                <div class="meter__fill" id="meter-fill"></div>
+              </div>
+              <div class="meter__readout">
+                <span id="meter-label">Baseline</span>
+                <strong id="meter-value">22%</strong>
+              </div>
+            </div>
+            <ul class="levers" id="levers"></ul>
+          </section>
+        </div>
+
+        <div class="readout" id="readout" aria-live="polite">
+          <div class="readout__stat">
+            <span class="readout__label">Queue</span>
+            <strong id="queue-health">Fragile</strong>
+          </div>
+          <div class="readout__stat">
+            <span class="readout__label">When bugs show up</span>
+            <strong id="defect-timing">Late · costly</strong>
+          </div>
+          <div class="readout__stat">
+            <span class="readout__label">Team habit</span>
+            <strong id="team-posture">Heroics over prevention</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="close" id="close" aria-labelledby="close-title">
+        <h2 id="close-title">For RocketRez</h2>
+        <p>
+          Your product lives at the gate: tickets, memberships, POS, partners,
+          peak days. Quality here means guest and operator flows that hold when
+          the park is slammed.
+        </p>
+        <ul class="bring">
+          <li>
+            <strong>Move left without stalling the ride.</strong> Clear
+            acceptance criteria, API contracts, risk-ranked checks in CI. Boring
+            releases on busy weekends.
+          </li>
+          <li>
+            <strong>Treat flake as a culture problem.</strong> A red build
+            nobody believes trains people to ignore quality. Fix the signal first.
+          </li>
+          <li>
+            <strong>Let AI help judgment, not replace it.</strong> Draft cases,
+            spot gaps, speed triage. People who know the guest still make the call.
+          </li>
+        </ul>
+        <p class="close__sign">
+          Ilia Dobkin<br />
+          <a href="mailto:idobkin@gmail.com">idobkin@gmail.com</a>
+          ·
+          <a href="https://sdet.levkin.ca" rel="noopener">sdet.levkin.ca</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <p>Local preview for RocketRez. Not public yet.</p>
+    </footer>
+
+    <script src="./js/audio-config.js"></script>
+    <script src="./js/app.js" defer></script>
+  </body>
+</html>

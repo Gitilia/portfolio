@@ -1,0 +1,44 @@
+Here's how I think about it.
+
+Quality isn't a phase you bolt on at the end of a sprint.
+It's how the whole queue moves.
+Same idea as keeping guests flowing through a gate on a busy Saturday.
+
+I'd lead that rethink by doing the work myself.
+Not by writing another policy doc.
+
+First, I own the signal.
+If the suite is flaky, I go fix it before I ask anyone for more coverage.
+A red build nobody trusts just teaches people to ship around quality.
+I've kept daily continuous integration above ninety percent by killing brittle waits, and making a failure mean something again.
+
+Second, I show up earlier.
+Vague stories are where bugs are born.
+So I sit in refinement, help write acceptance criteria, and pair on the hard paths while the change is still cheap.
+Not after the pull request is already stamped done.
+
+Third, I make the good path the fast path.
+Shared fixtures, shared libraries, and gap checks that point at real risk.
+People take whatever shortcut is quickest.
+If solid tests are slower than clicking around by hand, you lose that fight.
+
+Where I'd push in the process is intake and contracts first.
+On a platform with tickets, point of sale, partners, and payments, things usually break at the boundaries.
+Then the pipeline.
+It has to be quick and trusted, or folks route around it.
+And release isn't a blame meeting.
+It's a feedback loop into the next story.
+
+What actually changes how a team behaves?
+Green builds you can believe.
+Feedback in minutes, not days.
+Room to raise risk early without getting punished for it.
+Celebrating the bug that never shipped, louder than the overnight hero fix.
+And shared ownership: if you change it, you test it.
+
+At Rocket Rez, I'd aim for boring releases when the park is slammed.
+A.I. can help draft cases and spot gaps.
+The call about the guest still belongs to the team.
+
+Happy to dig in live.
+Thanks for the look.

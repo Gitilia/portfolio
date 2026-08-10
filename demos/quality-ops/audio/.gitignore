@@ -1,0 +1,9 @@
+# Keep recordings local unless you intentionally deploy them.
+answer.m4a
+answer.mp3
+answer.webm
+answer.wav
+*.m4a
+*.mp3
+*.webm
+!.gitkeep
