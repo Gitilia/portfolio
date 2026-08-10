@@ -203,6 +203,11 @@ window.PORTFOLIO = {
       href: "https://iliadobkin.com/demos/gdp/",
       note: "Canada GDP MoM chart + PDF export",
     },
+    {
+      title: "Quality Ops",
+      href: "https://iliadobkin.com/demos/quality-ops/",
+      note: "Interactive QA leadership console (process + behaviour levers)",
+    },
   ],
 
   lanes: [
